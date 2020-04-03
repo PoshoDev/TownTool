@@ -6,12 +6,14 @@ g.acre = 16;
 g.town_width = 7;
 g.town_height = 6;
 
+g.scale = g.tile / 128;
 g.grid = true;
 
-g.create_type = 0;
+enum kind { terrain, fence, item, tree, flower, house, bridge, stair };
+g.create_type = kind.terrain;
 g.create_index = 0;
+g.create = false;
+
 
 drag_x = 0;
 drag_y = 0;
-
-instance_create_depth(0, 0, -1000, obj_creator);

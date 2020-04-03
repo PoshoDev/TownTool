@@ -6,7 +6,7 @@ var max_h = len * g.town_height;
 
 for(var i=0; i<max_w; i+=g.tile)
     for (var j=0; j<max_h; j+=g.tile)
-        draw_sprite(spr_grass, 0, i, j);
+        draw_sprite(spr_terrain, 0, i, j);
 
 
 // Grid

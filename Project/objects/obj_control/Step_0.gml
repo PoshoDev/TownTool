@@ -6,6 +6,8 @@ if (mouse_check_button_pressed(mb_middle))
     drag_y = mouse_y;
 }
 
+
+// Panning
 if (mouse_check_button(mb_middle))
 {
     camera_set_view_pos(view_camera,
@@ -41,6 +43,22 @@ else if (keyboard_check_pressed(vk_left))
         g.create_index = sprite_get_number(spr_tree);
 }
 
+
+// Enable building
+if (keyboard_check_pressed(vk_space))
+{
+    g.create = !g.create;
+
+    if (g.create)
+    {
+        with (instance_create_depth(0, 0, -1000, obj_creator))
+            sprite_index = spr_terrain;
+    }
+    else if (instance_exists(obj_creator))
+        with (obj_creator)
+            instance_destroy();
+}
+    
 
 // Disable grids
 if (keyboard_check_pressed(ord("G")))
